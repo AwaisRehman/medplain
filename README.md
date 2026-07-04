@@ -107,8 +107,10 @@ MedPlain is a prototype for research and education, not clinical use. It does no
 
 ## License
 
-[MIT](LICENSE) © 2026 Awais. Built with Next.js, Ollama, Tesseract.js, and pdf.js.
+[MIT](LICENSE) © 2026 Awais Rehman. Built with Next.js, Ollama, Tesseract.js, and pdf.js.
 
 ## Citation
 
 If you use MedPlain, please cite it — see [`CITATION.cff`](CITATION.cff).
+
+**Author:** Awais Rehman ([ORCID: 0009-0005-1069-9219](https://orcid.org/0009-0005-1069-9219))
