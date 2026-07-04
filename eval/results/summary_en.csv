@@ -1,0 +1,6 @@
+id,specialty,facts_total,facts_survived,facts_missed,fkgl_before,fkgl_after,flesch_ease_after,guardrail_flags,known_traps,seconds
+onco-nsclc-01,Oncology (lung),11,11,,39.63294117647058,6.690625000000001,75.591875,0,4,50.3
+onco-headneck-02,Oncology (head & neck),7,7,,22.917435897435897,7.2114285714285735,64.73357142857142,0,5,36.8
+cardio-mi-03,Cardiology (post-heart-attack),8,6,indefinitely; 12 months,18.41,6.016883116883115,71.51675324675328,1,5,35.6
+gp-diabetes-htn-04,General practice (diabetes + hypertension),8,8,,12.271617647058829,7.571153846153845,67.7946794871795,0,5,37.9
+gp-peds-asthma-05,General practice (pediatric),7,7,,14.182963917525775,9.606599241466501,54.94026548672568,0,5,43.4

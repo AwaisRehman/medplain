@@ -1,0 +1,28 @@
+ORIGINAL:
+Following acute ST-elevation myocardial infarction with successful primary PCI and drug-eluting stent to the left anterior descending artery, discharge on dual antiplatelet therapy: aspirin 81 mg daily indefinitely and ticagrelor 90 mg twice daily for 12 months, plus atorvastatin 80 mg nightly, metoprolol succinate 50 mg daily, and lisinopril 10 mg daily. Do not discontinue ticagrelor prematurely without cardiology consultation, as early cessation markedly increases stent thrombosis risk. Follow up in 2 weeks and present immediately for recurrent chest pain.
+
+SIMPLIFIED:
+After a heart attack with successful treatment, take these medicines:
+
+- Aspirin: 81 mg every day forever.
+- Ticagrelor: 90 mg twice daily for 1 year (do not stop early without talking to your doctor).
+- Atorvastatin: 80 mg at bedtime.
+- Metoprolol succinate: 50 mg every day.
+- Lisinopril: 10 mg every day.
+
+Do not stop taking ticagrelor too soon, as it can cause problems. See the doctor in 2 weeks and go right away if you have chest pain again.
+
+GUARDRAIL FLAGS:
+[
+  {
+    "type": "number",
+    "detail": "The dose/value \"12\" from the original may be missing or changed in the simplified text."
+  }
+]
+
+KNOWN TRAPS TO CHECK BY HAND:
+- Aspirin is 'indefinite'; ticagrelor is '12 months' — these two durations must not be swapped or merged.
+- 'twice daily' for ticagrelor must not become 'once daily'.
+- The warning NOT to stop ticagrelor early (stent thrombosis risk) is a critical safety instruction that must never be dropped or softened.
+- 'metoprolol succinate' (extended-release) is not interchangeable with metoprolol tartrate — the salt form matters.
+- 'present immediately for recurrent chest pain' must retain its urgency.

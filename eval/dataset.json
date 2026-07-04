@@ -1,0 +1,69 @@
+{
+  "_about": "MedPlain gold-standard evaluation set. Each item is a realistic prescription-style text written to TEST the simplifier and the faithfulness guardrail. 'known_facts' lists the specific facts/qualifiers that must survive simplification. 'known_traps' documents the meaning-level errors we have observed models make on this text (or that this text is designed to expose). These texts are synthetic test data, NOT real clinical orders.",
+  "cases": [
+    {
+      "id": "onco-nsclc-01",
+      "specialty": "Oncology (lung)",
+      "original": "Start Osimertinib 80 mg orally once daily, continuous 28-day cycles, for locally advanced or metastatic EGFR exon 19 deletion-positive non-small cell lung cancer, with baseline ECG and liver function tests obtained within 7 days prior to initiation; monitor LFTs and creatinine monthly for the first 3 cycles, hold for ALT/AST >5x ULN or grade 3 pneumonitis, and reduce to 40 mg daily upon recovery for dose-limiting toxicity; dispense 30 tablets with 5 refills, and coordinate with radiation oncology for palliative bone metastasis management as needed.",
+      "known_facts": ["80 mg", "once daily", "28-day cycles", "7 days", "monthly", "first 3 cycles", "ALT/AST >5x ULN", "grade 3 pneumonitis", "reduce to 40 mg", "30 tablets", "5 refills"],
+      "known_traps": [
+        "Dose reduction is triggered by 'recovery FROM dose-limiting toxicity', NOT by the patient 'feeling better'. Distorting this is clinically dangerous.",
+        "'palliative bone metastasis management' must keep 'palliative' (comfort-focused, not curative).",
+        "'bone metastasis' (spread to bone) is NOT 'bone cancer' (originating in bone).",
+        "'creatinine' generalized to 'kidney function' is a borderline loss of specificity."
+      ]
+    },
+    {
+      "id": "onco-headneck-02",
+      "specialty": "Oncology (head & neck)",
+      "original": "Initiate concurrent chemoradiotherapy with cisplatin 100 mg/m2 IV on days 1, 22, and 43 alongside definitive radiotherapy 70 Gy in 35 fractions for stage IVA locally advanced squamous cell carcinoma of the oropharynx; ensure adequate hydration and antiemetic prophylaxis before each cisplatin dose, obtain audiometry and renal function at baseline, and place a prophylactic gastrostomy tube prior to treatment to maintain nutrition. Hold cisplatin for creatinine clearance below 50 mL/min and substitute carboplatin AUC 5 if nephrotoxicity develops.",
+      "known_facts": ["100 mg/m2", "days 1, 22, and 43", "70 Gy", "35 fractions", "stage IVA", "creatinine clearance below 50 mL/min", "carboplatin AUC 5"],
+      "known_traps": [
+        "'concurrent'/'definitive' chemoradiotherapy carries treatment-intent meaning that must not be dropped.",
+        "Dose is per body surface area (mg/m2), not a flat mg dose — dropping '/m2' changes the meaning.",
+        "'prophylactic gastrostomy tube' is preventive; must not be reframed as treating an existing problem.",
+        "Substitution to carboplatin is conditional on nephrotoxicity — the condition must survive.",
+        "'squamous cell carcinoma of the oropharynx' should not be generalized to a different cancer site."
+      ]
+    },
+    {
+      "id": "cardio-mi-03",
+      "specialty": "Cardiology (post-heart-attack)",
+      "original": "Following acute ST-elevation myocardial infarction with successful primary PCI and drug-eluting stent to the left anterior descending artery, discharge on dual antiplatelet therapy: aspirin 81 mg daily indefinitely and ticagrelor 90 mg twice daily for 12 months, plus atorvastatin 80 mg nightly, metoprolol succinate 50 mg daily, and lisinopril 10 mg daily. Do not discontinue ticagrelor prematurely without cardiology consultation, as early cessation markedly increases stent thrombosis risk. Follow up in 2 weeks and present immediately for recurrent chest pain.",
+      "known_facts": ["aspirin 81 mg daily", "indefinitely", "ticagrelor 90 mg twice daily", "12 months", "atorvastatin 80 mg nightly", "metoprolol succinate 50 mg daily", "lisinopril 10 mg daily", "2 weeks"],
+      "known_traps": [
+        "Aspirin is 'indefinite'; ticagrelor is '12 months' — these two durations must not be swapped or merged.",
+        "'twice daily' for ticagrelor must not become 'once daily'.",
+        "The warning NOT to stop ticagrelor early (stent thrombosis risk) is a critical safety instruction that must never be dropped or softened.",
+        "'metoprolol succinate' (extended-release) is not interchangeable with metoprolol tartrate — the salt form matters.",
+        "'present immediately for recurrent chest pain' must retain its urgency."
+      ]
+    },
+    {
+      "id": "gp-diabetes-htn-04",
+      "specialty": "General practice (diabetes + hypertension)",
+      "original": "For type 2 diabetes with hypertension, start metformin 500 mg twice daily with meals, titrating to 1000 mg twice daily after 2 weeks if tolerated, and amlodipine 5 mg once daily. Counsel that metformin should be temporarily withheld on days of contrast imaging or acute illness with dehydration to reduce the risk of lactic acidosis. Recheck HbA1c in 3 months with a target below 7 percent, and monitor blood pressure with a goal under 130/80 mmHg. Report muscle pain, unusual fatigue, or difficulty breathing promptly.",
+      "known_facts": ["metformin 500 mg twice daily", "1000 mg twice daily", "after 2 weeks", "amlodipine 5 mg once daily", "HbA1c", "3 months", "below 7 percent", "130/80 mmHg"],
+      "known_traps": [
+        "The titration is CONDITIONAL ('after 2 weeks IF tolerated') — dropping the condition changes the instruction.",
+        "'temporarily withheld' on contrast/illness days is a conditional safety hold, not a permanent stop.",
+        "Two different targets (HbA1c <7% and BP <130/80) must not be confused or swapped.",
+        "'with meals' timing for metformin is clinically relevant and should survive.",
+        "The symptom-reporting list should not be reframed as advice to stop medication on one's own."
+      ]
+    },
+    {
+      "id": "gp-peds-asthma-05",
+      "specialty": "General practice (pediatric)",
+      "original": "For a 6-year-old with moderate persistent asthma, prescribe fluticasone propionate inhaler 88 mcg, two inhalations twice daily via spacer as a daily controller, and albuterol 90 mcg, two puffs every 4 to 6 hours as needed for wheeze as a rescue inhaler. Emphasize that the fluticasone controller must be taken every day even when well, and is not for sudden symptoms. Rinse the mouth after each fluticasone dose to prevent oral thrush. Return for reassessment in 4 weeks, and seek emergency care if the rescue inhaler is needed more than every 4 hours or speech becomes difficult.",
+      "known_facts": ["6-year-old", "fluticasone propionate 88 mcg", "two inhalations twice daily", "albuterol 90 mcg", "two puffs", "every 4 to 6 hours", "4 weeks"],
+      "known_traps": [
+        "The controller (fluticasone, daily, preventive) and the rescue inhaler (albuterol, as-needed) have OPPOSITE roles — swapping or blurring them is dangerous.",
+        "'must be taken every day even when well' and 'not for sudden symptoms' must both survive for the controller.",
+        "'rinse the mouth after each dose' prevents thrush — a specific instruction, not general advice.",
+        "The emergency threshold ('needed more than every 4 hours' / 'speech becomes difficult') must retain urgency.",
+        "Doses are in mcg (not mg) — the unit must not change."
+      ]
+    }
+  ]
+}

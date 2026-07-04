@@ -1,0 +1,19 @@
+ORIGINAL:
+For type 2 diabetes with hypertension, start metformin 500 mg twice daily with meals, titrating to 1000 mg twice daily after 2 weeks if tolerated, and amlodipine 5 mg once daily. Counsel that metformin should be temporarily withheld on days of contrast imaging or acute illness with dehydration to reduce the risk of lactic acidosis. Recheck HbA1c in 3 months with a target below 7 percent, and monitor blood pressure with a goal under 130/80 mmHg. Report muscle pain, unusual fatigue, or difficulty breathing promptly.
+
+SIMPLIFIED:
+For type 2 diabetes with high blood pressure, start taking metformin 500 mg twice daily with meals. After 2 weeks, if you feel okay, increase to 1000 mg twice daily. Also take amlodipine 5 mg once daily.
+
+Do not take metformin on days of contrast imaging or when sick and dehydrated to avoid lactic acid buildup.
+
+Check your HbA1c in 3 months with a goal under 7 percent, and monitor blood pressure with a target below 130/80 mmHg. Tell your doctor if you have muscle pain, unusual tiredness, or trouble breathing.
+
+GUARDRAIL FLAGS:
+[]
+
+KNOWN TRAPS TO CHECK BY HAND:
+- The titration is CONDITIONAL ('after 2 weeks IF tolerated') — dropping the condition changes the instruction.
+- 'temporarily withheld' on contrast/illness days is a conditional safety hold, not a permanent stop.
+- Two different targets (HbA1c <7% and BP <130/80) must not be confused or swapped.
+- 'with meals' timing for metformin is clinically relevant and should survive.
+- The symptom-reporting list should not be reframed as advice to stop medication on one's own.

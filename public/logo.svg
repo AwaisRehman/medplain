@@ -1,0 +1,29 @@
+<svg width="360" height="96" viewBox="0 0 360 96" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MedPlain">
+  <defs>
+    <linearGradient id="mpg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0E7C6B"/>
+      <stop offset="1" stop-color="#0B5D50"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Mark: a rounded clinical tile. Top line is jagged (complex jargon),
+       lower lines resolve into clean, calm rules (plain language).
+       A subtle cross notch ties it to health. -->
+  <g>
+    <rect x="8" y="20" width="56" height="56" rx="14" fill="#fff" stroke="url(#mpg)" stroke-width="2.5"/>
+    <!-- jagged top line -->
+    <path d="M20 36 L27 31 L34 40 L41 33 L48 39 L52 37"
+          stroke="#0B5D50" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- smoothing lines -->
+    <path d="M20 50 H52" stroke="#0E7C6B" stroke-width="3" stroke-linecap="round"/>
+    <path d="M20 62 H44" stroke="#0E7C6B" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+    <!-- health cross accent -->
+    <path d="M54 56 v10 M49 61 h10" stroke="#0E7C6B" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+  </g>
+
+  <!-- Wordmark -->
+  <g font-family="'IBM Plex Sans', system-ui, sans-serif">
+    <text x="80" y="56" font-size="34" font-weight="600" letter-spacing="-0.5" fill="#12211E">Med<tspan fill="#0B5D50" font-weight="700">Plain</tspan></text>
+    <text x="81" y="74" font-size="12.5" font-weight="500" letter-spacing="0.3" fill="#8B968F">Clinical text, in plain language</text>
+  </g>
+</svg>

@@ -1,0 +1,15 @@
+ORIGINAL:
+Initiate concurrent chemoradiotherapy with cisplatin 100 mg/m2 IV on days 1, 22, and 43 alongside definitive radiotherapy 70 Gy in 35 fractions for stage IVA locally advanced squamous cell carcinoma of the oropharynx; ensure adequate hydration and antiemetic prophylaxis before each cisplatin dose, obtain audiometry and renal function at baseline, and place a prophylactic gastrostomy tube prior to treatment to maintain nutrition. Hold cisplatin for creatinine clearance below 50 mL/min and substitute carboplatin AUC 5 if nephrotoxicity develops.
+
+SIMPLIFIED:
+Start chemotherapy with radiation. Take cisplatin (100 mg/m2) through IV on days 1, 22, and 43 along with radiotherapy (70 Gy in 35 treatments) for stage IVA squamous cell cancer of the oropharynx. Drink plenty of water and take anti-nausea medicine before each cisplatin dose. Get hearing tests and kidney function tests at first. Put in a feeding tube before treatment to help with nutrition. Stop cisplatin if creatinine clearance is less than 50 mL/min. If kidney problems happen, switch to carboplatin (AUC 5).
+
+GUARDRAIL FLAGS:
+[]
+
+KNOWN TRAPS TO CHECK BY HAND:
+- 'concurrent'/'definitive' chemoradiotherapy carries treatment-intent meaning that must not be dropped.
+- Dose is per body surface area (mg/m2), not a flat mg dose — dropping '/m2' changes the meaning.
+- 'prophylactic gastrostomy tube' is preventive; must not be reframed as treating an existing problem.
+- Substitution to carboplatin is conditional on nephrotoxicity — the condition must survive.
+- 'squamous cell carcinoma of the oropharynx' should not be generalized to a different cancer site.

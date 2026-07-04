@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "MedPlain: Local, bilingual plain-language simplification of clinical text with a faithfulness check"
+abstract: >-
+  MedPlain is an open-source, locally-run tool that simplifies clinical text
+  into plain language at a chosen reading level, in English and Arabic, and
+  applies a two-layer faithfulness check to surface changed, added, or missing
+  facts for human review. It runs entirely on-device via a local language model
+  (Ollama), reads printed prescriptions from PDF or image, and refuses to
+  simplify low-confidence OCR to guard against hallucination. It is a research
+  and educational prototype, not a medical device.
+type: software
+authors:
+  - given-names: Awais
+    family-names: ""
+    # TODO: add your full name, and ORCID if you have one:
+    # orcid: "https://orcid.org/0000-0000-0000-0000"
+keywords:
+  - health literacy
+  - text simplification
+  - clinical NLP
+  - large language models
+  - faithfulness
+  - Arabic
+  - local inference
+license: MIT
+repository-code: "https://github.com/USERNAME/medplain"  # TODO: update
+version: "1.0.0"
+date-released: "2026-07-04"

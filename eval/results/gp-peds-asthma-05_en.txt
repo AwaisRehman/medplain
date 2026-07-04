@@ -1,0 +1,19 @@
+ORIGINAL:
+For a 6-year-old with moderate persistent asthma, prescribe fluticasone propionate inhaler 88 mcg, two inhalations twice daily via spacer as a daily controller, and albuterol 90 mcg, two puffs every 4 to 6 hours as needed for wheeze as a rescue inhaler. Emphasize that the fluticasone controller must be taken every day even when well, and is not for sudden symptoms. Rinse the mouth after each fluticasone dose to prevent oral thrush. Return for reassessment in 4 weeks, and seek emergency care if the rescue inhaler is needed more than every 4 hours or speech becomes difficult.
+
+SIMPLIFIED:
+For a 6-year-old with moderate persistent asthma, use a fluticasone propionate inhaler (88 mcg) two puffs twice daily through a spacer as a daily controller medicine. Also, use an albuterol inhaler (90 mcg) two puffs every 4 to 6 hours when needed for wheezing as a rescue medicine.
+
+The fluticasone must be taken every day even if the child feels well. It is not for sudden symptoms. After each dose of fluticasone, rinse the mouth to prevent oral thrush (a kind of yeast infection).
+
+Return in 4 weeks for a check-up. Go to emergency care if the rescue inhaler is needed more than every 4 hours or if speech becomes hard to understand.
+
+GUARDRAIL FLAGS:
+[]
+
+KNOWN TRAPS TO CHECK BY HAND:
+- The controller (fluticasone, daily, preventive) and the rescue inhaler (albuterol, as-needed) have OPPOSITE roles — swapping or blurring them is dangerous.
+- 'must be taken every day even when well' and 'not for sudden symptoms' must both survive for the controller.
+- 'rinse the mouth after each dose' prevents thrush — a specific instruction, not general advice.
+- The emergency threshold ('needed more than every 4 hours' / 'speech becomes difficult') must retain urgency.
+- Doses are in mcg (not mg) — the unit must not change.

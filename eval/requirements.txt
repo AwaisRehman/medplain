@@ -1,0 +1,5 @@
+# eval/requirements.txt
+# Install with:  pip install -r requirements.txt --break-system-packages
+requests>=2.31
+textstat>=0.7.4
+pandas>=2.0
