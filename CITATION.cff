@@ -14,6 +14,10 @@ authors:
   - given-names: Awais
     family-names: Rehman
     orcid: "https://orcid.org/0009-0005-1069-9219"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.21188314"
+    description: "Archived release v1.0.0 on Zenodo"
 keywords:
   - health literacy
   - text simplification
@@ -23,6 +27,7 @@ keywords:
   - Arabic
   - local inference
 license: MIT
+doi: "10.5281/zenodo.21188314"
 repository-code: "https://github.com/AwaisRehman/medplain"
 version: "1.0.0"
 date-released: "2026-07-04"
