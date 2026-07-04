@@ -12,9 +12,8 @@ abstract: >-
 type: software
 authors:
   - given-names: Awais
-    family-names: ""
-    # TODO: add your full name, and ORCID if you have one:
-    # orcid: "https://orcid.org/0000-0000-0000-0000"
+    family-names: Rehman
+    orcid: "https://orcid.org/0009-0005-1069-9219"
 keywords:
   - health literacy
   - text simplification
@@ -24,6 +23,6 @@ keywords:
   - Arabic
   - local inference
 license: MIT
-repository-code: "https://github.com/USERNAME/medplain"  # TODO: update
+repository-code: "https://github.com/AwaisRehman/medplain"
 version: "1.0.0"
 date-released: "2026-07-04"
