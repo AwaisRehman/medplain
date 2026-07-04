@@ -7,6 +7,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-0E7C6B.svg)](LICENSE)
 ![Next.js](https://img.shields.io/badge/Next.js-16-black)
 ![Runs locally](https://img.shields.io/badge/LLM-local%20via%20Ollama-0B5D50)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21188314.svg)](https://doi.org/10.5281/zenodo.21188314)
 
 </div>
 
