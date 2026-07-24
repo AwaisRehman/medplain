@@ -6,7 +6,7 @@ For type 2 diabetes with high blood pressure, start taking metformin 500 mg twic
 
 Do not take metformin on days of contrast imaging or when sick and dehydrated to avoid lactic acid buildup.
 
-Check your HbA1c in 3 months with a goal under 7 percent, and monitor blood pressure with a target below 130/80 mmHg. Tell your doctor if you have muscle pain, unusual tiredness, or trouble breathing.
+Check your HbA1c in 3 months with a goal under 7 percent, and monitor blood pressure with a target below 130/80 mmHg. Tell your doctor if you have muscle pain, unusual fatigue, or trouble breathing.
 
 GUARDRAIL FLAGS:
 []

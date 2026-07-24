@@ -43,17 +43,31 @@ def normalize(s: str) -> str:
     return s.translate(trans).lower()
 
 
+# eval/run_eval.py —  fact_survives()
 def fact_survives(fact: str, output: str) -> bool:
-    """A fact 'survives' if its core number(s), or its text, appear in the output."""
+    """A fact 'survives' if all its numbers, or all its words, appear in the output.
+
+    Uses word/number boundaries rather than raw substring containment. Without
+    boundaries, "5" matches inside "5.5", "15" and "52-year-old", and a
+    multi-word fact is scored on its first word alone — both of which inflate
+    fact preservation on long documents.
+    """
     out = normalize(output)
     f = normalize(fact)
+
     nums = re.findall(r"\d+(?:\.\d+)?", f)
     if nums:
-        # every number in the fact must appear somewhere in the output
-        return all(n in out for n in nums)
-    # non-numeric fact: check the key word appears
-    key = re.sub(r"[^a-z ]", "", f).strip().split(" ")[0]
-    return key in out if key else False
+        # Every number must appear as a standalone value, not as a fragment
+        # of a longer number.
+        return all(
+            re.search(rf"(?<![\d.]){re.escape(n)}(?![\d.])", out) for n in nums
+        )
+
+    # Non-numeric fact: every word must appear, each on word boundaries.
+    words = re.sub(r"[^a-z ]", " ", f).split()
+    if not words:
+        return False
+    return all(re.search(rf"\b{re.escape(w)}\b", out) for w in words)
 
 
 def call_simplify(text: str, level: str, language: str) -> str:

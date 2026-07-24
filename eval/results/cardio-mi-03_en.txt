@@ -10,7 +10,9 @@ After a heart attack with successful treatment, take these medicines:
 - Metoprolol succinate: 50 mg every day.
 - Lisinopril: 10 mg every day.
 
-Do not stop taking ticagrelor too soon, as it can cause problems. See the doctor in 2 weeks and go right away if you have chest pain again.
+Do not stop taking ticagrelor too soon. It can cause problems if you do.
+
+See your doctor in 2 weeks. Go to the hospital right away if you have chest pain again.
 
 GUARDRAIL FLAGS:
 [
