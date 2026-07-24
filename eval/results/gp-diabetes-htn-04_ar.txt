@@ -1,0 +1,32 @@
+ORIGINAL:
+For type 2 diabetes with hypertension, start metformin 500 mg twice daily with meals, titrating to 1000 mg twice daily after 2 weeks if tolerated, and amlodipine 5 mg once daily. Counsel that metformin should be temporarily withheld on days of contrast imaging or acute illness with dehydration to reduce the risk of lactic acidosis. Recheck HbA1c in 3 months with a target below 7 percent, and monitor blood pressure with a goal under 130/80 mmHg. Report muscle pain, unusual fatigue, or difficulty breathing promptly.
+
+SIMPLIFIED:
+ابدأ بتناول ميتفورمين 500 ملغ مرتين في اليوم مع الوجبات، وزيده إلى 1000 ملغ مرتين في اليوم بعد两周后如果耐受良好。同时每天一次服用氨氯地平5毫克。告知患者在进行对比成像或急性疾病伴有脱水的日子里暂时停止服用美迪凡，以减少乳酸酸中毒的风险。三个月后复查糖化血红蛋白，目标值低于7%，并监测血压，目标值低于130/80毫米汞柱。如有肌肉疼痛、异常疲劳或呼吸困难，请立即报告。
+
+GUARDRAIL FLAGS:
+[
+  {
+    "type": "number",
+    "detail": "The dose/value \"5\" from the original may be missing or changed in the simplified text."
+  },
+  {
+    "type": "number",
+    "detail": "The dose/value \"3\" from the original may be missing or changed in the simplified text."
+  },
+  {
+    "type": "changed",
+    "detail": "metformin brand name 'ميتفورمين Metforslim' is not mentioned in the original, which only specifies generic metformin"
+  },
+  {
+    "type": "added",
+    "detail": "explanation for when to withhold metformin ('在对比成像或急性疾病伴有脱水的日子里') goes beyond the original instruction"
+  }
+]
+
+KNOWN TRAPS TO CHECK BY HAND:
+- The titration is CONDITIONAL ('after 2 weeks IF tolerated') — dropping the condition changes the instruction.
+- 'temporarily withheld' on contrast/illness days is a conditional safety hold, not a permanent stop.
+- Two different targets (HbA1c <7% and BP <130/80) must not be confused or swapped.
+- 'with meals' timing for metformin is clinically relevant and should survive.
+- The symptom-reporting list should not be reframed as advice to stop medication on one's own.

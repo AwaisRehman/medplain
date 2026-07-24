@@ -69,6 +69,10 @@ def fact_survives(fact: str, output: str) -> bool:
         return False
     return all(re.search(rf"\b{re.escape(w)}\b", out) for w in words)
 
+def is_numeric_fact(fact: str) -> bool:
+    """Only digit-bearing facts are matchable across languages."""
+    return bool(re.search(r"\d", fact))
+
 
 def call_simplify(text: str, level: str, language: str) -> str:
     r = requests.post(
@@ -115,10 +119,18 @@ def main():
             print(f"   ERROR: {e}\n")
             continue
         secs = round(time.time() - t0, 1)
-
-        facts = c["known_facts"]
+        
+        
+        all_facts = c["known_facts"]
+        if args.lang == "en":
+            facts, basis = all_facts, "all"
+        else:
+            facts = [f for f in all_facts if is_numeric_fact(f)]
+            basis = f"numeric-only ({len(all_facts) - len(facts)} lexical excluded)"
         survived = [f for f in facts if fact_survives(f, simplified)]
         missed = [f for f in facts if f not in survived]
+
+  
 
         # Readability only meaningful for English text.
         if args.lang == "en":
@@ -131,6 +143,7 @@ def main():
         rows.append({
             "id": cid,
             "specialty": c["specialty"],
+            "scoring_basis": basis,
             "facts_total": len(facts),
             "facts_survived": len(survived),
             "facts_missed": "; ".join(missed) if missed else "",
@@ -167,7 +180,10 @@ def main():
         print(f"Mean grade level: {df.fkgl_before.mean():.1f} -> {df.fkgl_after.mean():.1f}")
     tf = df.facts_survived.sum()
     tt = df.facts_total.sum()
-    print(f"Fact preservation: {tf}/{tt}  ({100*tf/tt:.0f}%)")
+    label = "all facts" if args.lang == "en" else "NUMERIC FACTS ONLY"
+    print(f"Fact preservation ({label}): {tf}/{tt}  ({100*tf/tt:.0f}%)")
+    if args.lang != "en":
+        print("Lexical facts excluded — adjudicate by hand from results/*.txt")
     print(f"Saved table -> {csv_path}")
     print(f"Per-case text + traps -> {OUT}/  (score the traps by hand)\n")
 

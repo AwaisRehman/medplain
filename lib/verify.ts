@@ -28,10 +28,14 @@ function normalizeDigits(text: string): string {
 
 // Arabic number-words for 0-10, so "خمسة" counts as "5".
 const ARABIC_NUMBER_WORDS: Record<string, string> = {
-  "صفر": "0", "واحد": "1", "اثنان": "2", "اثنين": "2", "ثلاثة": "3",
-  "أربعة": "4", "اربعة": "4", "خمسة": "5", "ستة": "6", "سبعة": "7",
-  "ثمانية": "8", "تسعة": "9", "عشرة": "10",
+  "صفر": "0", "واحد": "1", "واحدة": "1",
+  "اثنان": "2", "اثنين": "2", "اثنتين": "2", "مرتين": "2", "يومين": "2",
+  "ثلاثة": "3", "ثلاث": "3", "أربعة": "4", "اربعة": "4", "أربع": "4", "اربع": "4",
+  "خمسة": "5", "خمس": "5", "ستة": "6", "ست": "6",
+  "سبعة": "7", "سبع": "7", "ثمانية": "8", "ثمان": "8",
+  "تسعة": "9", "تسع": "9", "عشرة": "10", "عشر": "10",
 };
+
 
 // Pull out dose-like numbers: a number that is meaningful (has 2+ digits,
 // OR is followed/preceded by a unit or dose word). This avoids flagging
@@ -43,7 +47,7 @@ function extractDoseNumbers(text: string): Set<string> {
   // 1. Numbers attached to a unit or dose context (mg, ml, mcg, puff, day, hour,
   //    and their Arabic equivalents).
   const unitPattern =
-    /(\d+(?:\.\d+)?)\s*(mg|ml|mcg|g|puffs?|days?|hours?|times?|ملغ|مغ|مل|رشفة|رشفات|أيام|يوم|ساعات|ساعة|مرات|مرة)/gi;
+    /(\d+(?:\.\d+)?)\s*(mg|ml|mcg|g|puffs?|days?|hours?|times?|weeks?|months?|years?|tablets?|doses?|ملغ|مغ|مل|ملليلتر|ميكروغرام|مكغ|جرام|غرام|بخة|بخات|نفخة|نفخات|أيام|يوم|يومين|أسبوع|أسابيع|شهر|أشهر|شهور|سنة|سنوات|ساعات|ساعة|مرات|مرة|مرتين|قرص|أقراص|حبة|حبوب|جرعة|جرعات|دقيقة|دقائق)/gi;
   let m;
   while ((m = unitPattern.exec(norm)) !== null) {
     found.add(m[1]);

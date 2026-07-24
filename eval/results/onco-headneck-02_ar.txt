@@ -2,7 +2,7 @@ ORIGINAL:
 Initiate concurrent chemoradiotherapy with cisplatin 100 mg/m2 IV on days 1, 22, and 43 alongside definitive radiotherapy 70 Gy in 35 fractions for stage IVA locally advanced squamous cell carcinoma of the oropharynx; ensure adequate hydration and antiemetic prophylaxis before each cisplatin dose, obtain audiometry and renal function at baseline, and place a prophylactic gastrostomy tube prior to treatment to maintain nutrition. Hold cisplatin for creatinine clearance below 50 mL/min and substitute carboplatin AUC 5 if nephrotoxicity develops.
 
 SIMPLIFIED:
-Start chemotherapy and radiation together with cisplatin 100 mg/m2 IV on days 1, 22, and 43 along with 70 Gy of radiation in 35 treatments for stage IVA locally advanced squamous cell cancer of the oropharynx. Make sure you stay hydrated and take anti-nausea medicine before each cisplatin dose. Get hearing tests and kidney function tests at the start. Put a feeding tube in place before treatment to help with nutrition. Stop cisplatin if your creatinine clearance is below 50 mL/min and switch to carboplatin AUC 5 if you have kidney problems from cisplatin.
+ابدأ العلاج الكيميائي الإشعاعي مع سيسيل platinum 100 ملغ/متر مربع عن طريق الوريد في الأيام 1، 22 و43 إلى جانب الإشعاع الدقيق 70 غيغافون على جرعة واحدة لكل 35 جلسة لسرطان الخلايا السحائية للبلعوم في المرحلة الرابعة. تأكد من الترطيب الكافي والوقاية من الغثيان قبل كل جرعة من سيسيل platinum، واحصل على قياسات السمع ووظائف الكلية قبل بدء العلاج وضع أنبوب غذائي وقائي قبل بداية العلاج للحفاظ على التغذية. توقف عن استخدام سيسيل platinum إذا انخفضت نسبة إزالة الكرياتينين في الدم إلى أقل من 50 مليلتر في الدقيقة واستبدلها بكاربوبلاتين AUC 5 إذا حدثت مشاكل الكلية.
 
 GUARDRAIL FLAGS:
 []

@@ -2,15 +2,15 @@ ORIGINAL:
 Start Osimertinib 80 mg orally once daily, continuous 28-day cycles, for locally advanced or metastatic EGFR exon 19 deletion-positive non-small cell lung cancer, with baseline ECG and liver function tests obtained within 7 days prior to initiation; monitor LFTs and creatinine monthly for the first 3 cycles, hold for ALT/AST >5x ULN or grade 3 pneumonitis, and reduce to 40 mg daily upon recovery for dose-limiting toxicity; dispense 30 tablets with 5 refills, and coordinate with radiation oncology for palliative bone metastasis management as needed.
 
 SIMPLIFIED:
-Take Osimertinib 80 mg by mouth once a day, every day for 28 days in a row. This is for lung cancer that has spread or gotten worse and has a specific type of gene change called EGFR exon 19 deletion.
+Start taking Osimertinib 80 mg by mouth once a day, every day for 28 days in a row. This is for lung cancer that has spread or can't be removed from the body and has a specific type of gene change called EGFR exon 19 deletion.
 
-Before you start the medicine, get an ECG (heart test) and liver function tests within 7 days. 
+Before you start, get an ECG (heart test) and liver function tests within 7 days. 
 
-For the first 3 months, check your liver and kidney functions every month. Stop taking the medicine if your ALT or AST levels are more than 5 times higher than normal or if you have grade 3 pneumonitis.
+For the first 3 months, check your liver and kidney functions every month. Stop taking Osimertinib if your ALT or AST levels are more than 5 times higher than normal or if you have grade 3 pneumonitis.
 
-If side effects happen, lower the dose to 40 mg a day until they get better.
+If side effects happen, lower the dose to 40 mg a day until they get better. 
 
-Get 30 tablets at first, with 5 refills. Work with radiation doctors for bone cancer treatment as needed.
+Get 30 tablets at first and refill 5 times as needed. Talk with radiation oncology for help managing bone cancer that has spread if needed.
 
 GUARDRAIL FLAGS:
 []

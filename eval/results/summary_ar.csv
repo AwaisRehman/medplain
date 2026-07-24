@@ -1,0 +1,7 @@
+id,specialty,scoring_basis,facts_total,facts_survived,facts_missed,fkgl_before,fkgl_after,flesch_ease_after,guardrail_flags,known_traps,seconds
+onco-nsclc-01,Oncology (lung),numeric-only (2 lexical excluded),9,6,7 days; first 3 cycles; grade 3 pneumonitis,,,,3,4,12.6
+onco-headneck-02,Oncology (head & neck),numeric-only (1 lexical excluded),6,5,100 mg/m2,,,,0,5,7.7
+cardio-mi-03,Cardiology (post-heart-attack),numeric-only (1 lexical excluded),7,6,2 weeks,,,,2,5,8.8
+gp-diabetes-htn-04,General practice (diabetes + hypertension),numeric-only (0 lexical excluded),8,5,after 2 weeks; HbA1c; 3 months,,,,4,5,7.2
+gp-peds-asthma-05,General practice (pediatric),numeric-only (2 lexical excluded),5,5,,,,,0,5,8.4
+mts-adrenalectomy-06,"Surgery (operative note, MTSamples)",numeric-only (3 lexical excluded),5,3,11 mm trocar; 5 mm trocar,,,,4,8,24.1

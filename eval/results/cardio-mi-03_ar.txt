@@ -2,23 +2,26 @@ ORIGINAL:
 Following acute ST-elevation myocardial infarction with successful primary PCI and drug-eluting stent to the left anterior descending artery, discharge on dual antiplatelet therapy: aspirin 81 mg daily indefinitely and ticagrelor 90 mg twice daily for 12 months, plus atorvastatin 80 mg nightly, metoprolol succinate 50 mg daily, and lisinopril 10 mg daily. Do not discontinue ticagrelor prematurely without cardiology consultation, as early cessation markedly increases stent thrombosis risk. Follow up in 2 weeks and present immediately for recurrent chest pain.
 
 SIMPLIFIED:
-After a heart attack with successful treatment, take these medicines:
+بعد إصابة عضلية القلب بارتفاع ST مع نجاح تدخل دعامات القسطرة الدوائية في شريان القلب الأمامي الأيسر، سيتم وصف العلاج التالي عند الخروج من المستشفى: 
 
-- Aspirin: 81 mg every day forever.
-- Ticagrelor: 90 mg twice daily for 1 year (do not stop early without talking to your doctor).
-- Atorvastatin: 80 mg at bedtime.
-- Metoprolol succinate: 50 mg every day.
-- Lisinopril: 10 mg every day.
+- الأسبرين 81 ملغ يوميًا مدى الحياة.
+- التيكاغريلور 90 ملغ مرتين يوميًا لمدة 12 شهرًا.
+- أتورفاستاتين 80 ملغ كل ليلة.
+- ميتوبولول سوسكيانت 50 ملغ يوميًا.
+- ليزينوبريل 10 ملغ يوميًا.
 
-Do not stop taking ticagrelor too soon. It helps prevent blood clots in the stent.
-
-See your doctor in 2 weeks. Go to the hospital right away if you have chest pain again.
+لا تتوقف عن تناول التيكاغريلور دون استشارة طبيب القلب، لأن الإيقاف المبكر يزيد من خطر تكون جلطات دموية في الدعامات. 
+راجع الطبيب بعد两周内，如果有胸痛复发，请立即就诊。
 
 GUARDRAIL FLAGS:
 [
   {
-    "type": "number",
-    "detail": "The dose/value \"12\" from the original may be missing or changed in the simplified text."
+    "type": "added",
+    "detail": "increases clotting risk in stents instead of stent thrombosis risk"
+  },
+  {
+    "type": "removed",
+    "detail": "immediate presentation for recurrent chest pain"
   }
 ]
 

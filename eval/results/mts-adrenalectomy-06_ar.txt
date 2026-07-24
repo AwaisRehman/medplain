@@ -28,33 +28,49 @@ He tolerated the procedure well. All sponge and instrument counts were correct. 
 The patient was awakened, extubated, and returned to recovery room in satisfactory condition.
 
 SIMPLIFIED:
-Before surgery:
-1. Big lump on right adrenal gland.
-2. Belly button bulge (umbilical hernia).
+تشخيص قبل الجراحة:
+1. كتلة في الغدة الكظرية اليمنى.
+2. قرحة بطنية (حالة تظهر عندما يخرج جزء من الأمعاء عبر عضلات البطن).
 
-After surgery:
-1. Big lump on right adrenal gland.
-2. Belly button bulge.
+تشخيص بعد الجراحة:
+1. كتلة في الغدة الكظرية اليمنى.
+2. قرحة بطنية.
 
-Surgery done: Small camera and tools used to remove the right adrenal gland and fix the belly button bulge.
+العملية التي أجريت: استئصال غدة كظرية يميني بالمنظار مع تصحيح القرحة البطنية.
 
-Anesthesia: Patient was asleep during surgery.
+التخدير: عام.
 
-Patient info: 52-year-old person had a 5.5 cm non-working lump in their right adrenal gland. Risks like infection, bleeding, need for blood transfusion, or more treatments were explained. Options of fully laparoscopic, open surgery, or watchful waiting were discussed.
+ملاحظة طبية: هذا المريض عمره 52 سنة وهو سجين لديه كتلة غير وظيفية قطرها 5.5 سم في الغدة الكظرية اليمنى. شرحنا له العملية بما فيها مخاطر العدوى والنزف والإمكانية لنقل الدم أو الحاجة إلى علاجات إضافية. كما أخبرناه بأن البديل للعملية بالمنظار هو الجراحة المفتوحة أو مراقبة الورم.
 
-Surgery details: Patient lay on side with knees up. A tube was put into the bladder. Cut made above belly button, about 5.5 cm wide. Hernia fixed. Small holes (trocars) made in skin for tools. Liver moved aside to see adrenal gland. Blood vessels cut and tied off. Tumor removed from top of kidney. Vein and artery on adrenal gland were also cut and tied off. Lump put in bag and taken out.
+وصف العملية: وضع المريض في وضعية جانبية اليمنى. كان لديه أنبوب قسطرة في المثانة. جرى فتح شق جراحي بطول 5.5 سم فوق البطن. تم تصحيح القرحة البطنية. أدخلت أدوات المنظار الجراحي وتم استخدام مثبت كبدي للمساعدة.
 
-No bleeding problems. Hernia fixed well. Skin closed with stitches and clips.
+انفصلت الأمعاء عن الكبد وأُزيلت الروابط بين الغدة الكظرية والكلى. تم تحديد الوريد الأجوف والساق الكلوية الرئيسية. قمنا بتقطيع جميع الأوعية الصغيرة الموجودة فوق الساق الكلوية الرئيسية. ثم أزلنا الورم من أعلى الكلى باستخدام مثبتات ومضخة كهربائية. استخدمنا جهاز تقطيع لفصل الغدة الكظرية عن الكبد.
 
-Patient did well during surgery. No mistakes with tools or sponges left inside. Less than 100 mL of blood lost.
+تم فصل الروابط الخلفية للغدة الكظرية واستخدمت المثبتات لتقطيع الأوعية الدموية الرئيسية والوريد الكظري. تم وضع العينة في كيس جراحي وخرجت بشكل كامل.
 
-Patient woke up, tube removed, sent to recovery room in good condition.
+كانت السيطرة على النزف ممتازة. تم تصحيح القرحة البطنية بالكامل وأغلقنا الجرح باستخدام خيوط جراحية. 
+
+تحمل المريض العملية بشكل جيد. كانت جميع الأدوات والمناشف المستخدمة في مكانها الصحيح. لم يتجاوز فقدان الدم 100 مل.
+
+استيقظ المريض وتم إزالة أنبوب التنفس عنه وأعيد إلى غرفة التعافي بحالة جيدة.
 
 GUARDRAIL FLAGS:
 [
   {
     "type": "number",
     "detail": "The dose/value \"11\" from the original may be missing or changed in the simplified text."
+  },
+  {
+    "type": "changed",
+    "detail": "Umbilical hernia was incorrectly translated to 'قرحة بطنية' (abdominal ulcer) instead of ' Hernia عرجائية'"
+  },
+  {
+    "type": "removed",
+    "detail": "The original text mentions the possibility of further treatments being required after surgery, which is not mentioned in the simplified version."
+  },
+  {
+    "type": "added",
+    "detail": "The simplified version incorrectly adds information about reflecting the colon medially by incising the white line of Toldt, which was not explicitly stated as an additional step but rather part of the dissection process described."
   }
 ]
 
