@@ -1,0 +1,4 @@
+input_type,documents,accepted,wrongly_accepted,wrongly_refused
+clean_print,6,6,0,0
+degraded_print,6,6,0,0
+handwriting,123,10,10,0

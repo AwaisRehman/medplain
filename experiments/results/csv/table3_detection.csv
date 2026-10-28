@@ -1,0 +1,6 @@
+checker,true_positives,false_positives,precision,errors_detected,confirmed_errors,recall
+numerical_only,4,2,0.667,3,26,0.115
+semantic_only,2,0,1.0,2,26,0.077
+combined_L1_L2,6,2,0.75,5,26,0.192
+script_check_L0,4,0,1.0,4,26,0.154
+all_layers,10,2,0.833,7,26,0.269

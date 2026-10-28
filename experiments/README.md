@@ -15,11 +15,13 @@ experiments/
     ocr_conf.js               OCR confidence with MedPlain's own Tesseract.js configuration
     find_duplicates.py        finds near-duplicate images (average hash)
     score_results.py          computes all table values and writes LaTeX rows
+    export_csv.py             exports all results as plain CSV files of numerical metrics
   results/
     runs.jsonl                216 runs: outputs, flags per layer, facts, readability, latency, memory
     ocr_confidence.csv        OCR mean word confidence per image (printed and handwritten)
     ocr_duplicates.txt        near-duplicate handwritten images excluded from Table 4
     paper_tables.tex          generated table rows (output of score_results.py)
+    csv/                      all metrics as CSV (one row per run, per-condition summaries, Tables 2-4, OCR)
   sheets/
     drug_names.csv            Arabic drug-name judgments (Table 2)
     error_audit.csv           confirmed errors per output (Table 3, recall)
@@ -108,6 +110,16 @@ python experiments/scripts/score_results.py
 
 Prints every value of Tables 2–5 and writes LaTeX rows to `results/paper_tables.tex`.
 Use `--runs`, `--sheets`, `--ocr` and `--ocr-dups` to score a new run instead of the released one.
+
+**6. Export the metrics as CSV**
+
+```bash
+python experiments/scripts/export_csv.py
+```
+
+Writes `results/csv/`: `runs_metrics.csv` (one row per run, 216 rows), `summary_by_condition.csv`,
+`table2_models.csv`, `table3_detection.csv`, `table4_ocr.csv`, `ocr_threshold_sweep.csv` and
+`ocr_per_image.csv`. These files contain numerical metrics only; no images are released.
 
 ## Main results (from the released files)
 
