@@ -13,7 +13,7 @@ vi.mock("@/lib/ollama", () => ({
   askOllama: vi.fn(),
 }));
 
-import { checkNumbers, checkSemantics, verifyFaithfulness, Flag } from "@/lib/verify";
+import { checkScript, checkNumbers, checkSemantics, verifyFaithfulness, Flag } from "@/lib/verify";
 import { askOllama } from "@/lib/ollama";
 
 const mockedAsk = vi.mocked(askOllama);
@@ -81,8 +81,9 @@ describe("checkNumbers — English doses", () => {
     // "2 tablets" — 'tablets' is not a tracked unit and '2' is a single
     // digit, so it is intentionally not extracted. This documents the
     // designed trade-off described in the paper (Section 3.5).
-    const original = "Take 2 tablets with water.";
-    const simplified = "Take the tablets with water.";
+    // "2" here is a step number, not a dose: no unit follows it.
+    const original = "Step 2: take with water.";
+    const simplified = "Take with water.";
     expect(checkNumbers(original, simplified)).toEqual([]);
   });
 });
@@ -206,5 +207,34 @@ describe("verifyFaithfulness — combined layers", () => {
     const original = "Take 500 mg daily.";
     const simplified = "Take 500 mg every day.";
     expect(await verifyFaithfulness(original, simplified)).toEqual([]);
+  });
+});
+
+// ---------------------------------------------------------------
+// Layer 0 — deterministic output-script check
+// ---------------------------------------------------------------
+
+describe("checkScript", () => {
+  it("passes normal Arabic output with short Latin drug names and abbreviations", () => {
+    const out = "تناول أوسيميرتينيب 80 ملغ يوميًا. احصل على فحص ECG ووظائف الكبد ALT/AST.";
+    expect(checkScript(out)).toEqual([]);
+  });
+
+  it("passes normal English output", () => {
+    expect(checkScript("Take aspirin 81 mg every day.")).toEqual([]);
+  });
+
+  it("flags Chinese characters in an Arabic output", () => {
+    const out = "ابدأ بتناول ميتفورمين 500 ملغ مرتين في اليوم بعد两周后如果耐受良好。";
+    const flags = checkScript(out);
+    expect(flags).toHaveLength(1);
+    expect(flags[0].type).toBe("script");
+  });
+
+  it("flags a long English passage appended to an Arabic output", () => {
+    const out = "قدم 30 حبة مع خمس تعبئات إضافية. The provided response has been translated and simplified according to the instructions.";
+    const flags = checkScript(out);
+    expect(flags).toHaveLength(1);
+    expect(flags[0].detail).toMatch(/Latin script/);
   });
 });

@@ -12,6 +12,12 @@ export const maxDuration = 120;
 
 const MAX_BYTES = 15 * 1024 * 1024; // 15 MB
 
+// OCR confidence gate. Tesseract reports a mean word confidence (0-100).
+// Below this threshold (typical of handwriting or poor scans) the read is
+// refused, because low-confidence OCR fed to an LLM yields fluent but
+// fabricated clinical text that the downstream guardrail cannot detect.
+const OCR_CONFIDENCE_THRESHOLD = 60;
+
 export async function POST(req: NextRequest) {
   try {
     const form = await req.formData();
@@ -33,6 +39,7 @@ export async function POST(req: NextRequest) {
 
     let text = "";
     let method = "";
+    let confidence: number | undefined;
 
     if (type.includes("pdf") || name.endsWith(".pdf")) {
       text = await extractPdfText(buf);
@@ -48,7 +55,9 @@ export async function POST(req: NextRequest) {
         );
       }
     } else if (type.startsWith("image/") || /\.(png|jpe?g|webp|bmp|tiff?)$/.test(name)) {
-      text = await ocrImage(buf, ocrLang);
+      const ocr = await ocrImage(buf, ocrLang);
+      text = ocr.text;
+      confidence = ocr.confidence;
       method = "ocr";
       if (text.trim().length < 3) {
         return Response.json(
@@ -63,7 +72,20 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    return Response.json({ ok: true, text: text.trim(), method });
+    if (method === "ocr" && confidence !== undefined && confidence < OCR_CONFIDENCE_THRESHOLD) {
+      // The UI (app/page.tsx) blocks simplification when reliable === false.
+      return Response.json({
+        ok: true,
+        reliable: false,
+        text: "",
+        method,
+        confidence,
+        warning:
+          "This document could not be read reliably (it may be handwritten or blurry). Please type the text yourself.",
+      });
+    }
+
+    return Response.json({ ok: true, reliable: true, text: text.trim(), method, confidence });
   } catch {
     return Response.json(
       { ok: false, error: "Could not read the file. Try a clearer image or a text-based PDF." },
@@ -89,12 +111,12 @@ async function extractPdfText(buf: Buffer): Promise<string> {
   return out;
 }
 
-async function ocrImage(buf: Buffer, lang: string): Promise<string> {
+async function ocrImage(buf: Buffer, lang: string): Promise<{ text: string; confidence: number }> {
   const { createWorker } = await import("tesseract.js");
   const worker = await createWorker(lang);
   try {
     const { data } = await worker.recognize(buf);
-    return data.text || "";
+    return { text: data.text || "", confidence: Math.round(data.confidence ?? 0) };
   } finally {
     await worker.terminate();
   }

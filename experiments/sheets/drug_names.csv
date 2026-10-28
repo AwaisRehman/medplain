@@ -1,0 +1,25 @@
+﻿output_id,model,case,drug_en,judgement (correct / misspelled / wrong / missing / wrong_script),note
+qwen2.5:14b|onco-nsclc-01|ar|grade8|run1,qwen2.5:14b,onco-nsclc-01,osimertinib,correct,أوسيميرتينيب
+qwen2.5:14b|onco-headneck-02|ar|grade8|run1,qwen2.5:14b,onco-headneck-02,cisplatin,wrong,كيسلبلا틴 - corrupted with Korean letter in 2 of 3 mentions; third كيسلبلاتين
+qwen2.5:14b|onco-headneck-02|ar|grade8|run1,qwen2.5:14b,onco-headneck-02,carboplatin,misspelled,كاربوبلات (ending missing; standard كاربوبلاتين)
+qwen2.5:14b|cardio-mi-03|ar|grade8|run1,qwen2.5:14b,cardio-mi-03,aspirin,correct,الأسبرين
+qwen2.5:14b|cardio-mi-03|ar|grade8|run1,qwen2.5:14b,cardio-mi-03,ticagrelor,misspelled,التياكريلور (standard تيكاجريلور)
+qwen2.5:14b|cardio-mi-03|ar|grade8|run1,qwen2.5:14b,cardio-mi-03,atorvastatin,correct,أتورفاستاتين
+qwen2.5:14b|cardio-mi-03|ar|grade8|run1,qwen2.5:14b,cardio-mi-03,metoprolol succinate,misspelled,متوبولول سوسايتين (standard ميتوبرولول سكسينات)
+qwen2.5:14b|cardio-mi-03|ar|grade8|run1,qwen2.5:14b,cardio-mi-03,lisinopril,correct,ليسينوبريل
+qwen2.5:14b|gp-diabetes-htn-04|ar|grade8|run1,qwen2.5:14b,gp-diabetes-htn-04,metformin,correct,ميتفورمين; a later mention is Chinese 美迪凡
+qwen2.5:14b|gp-diabetes-htn-04|ar|grade8|run1,qwen2.5:14b,gp-diabetes-htn-04,amlodipine,wrong_script,only Chinese 氨氯地平
+qwen2.5:14b|gp-peds-asthma-05|ar|grade8|run1,qwen2.5:14b,gp-peds-asthma-05,fluticasone propionate,misspelled,فلوتيكايسون / فوتيكايسون (standard فلوتيكاسون)
+qwen2.5:14b|gp-peds-asthma-05|ar|grade8|run1,qwen2.5:14b,gp-peds-asthma-05,albuterol,correct,الألبوترول
+qwen2.5:3b|onco-nsclc-01|ar|grade8|run1,qwen2.5:3b,onco-nsclc-01,osimertinib,correct,Latin (Osimertinib) kept; Arabic form أسيمترينيليب is garbled
+qwen2.5:3b|onco-headneck-02|ar|grade8|run1,qwen2.5:3b,onco-headneck-02,cisplatin,wrong,"replaced by بيتازوليم, described as an antiemetic"
+qwen2.5:3b|onco-headneck-02|ar|grade8|run1,qwen2.5:3b,onco-headneck-02,carboplatin,wrong,بيتا كابورتوم
+qwen2.5:3b|cardio-mi-03|ar|grade8|run1,qwen2.5:3b,cardio-mi-03,aspirin,wrong,أسيس
+qwen2.5:3b|cardio-mi-03|ar|grade8|run1,qwen2.5:3b,cardio-mi-03,ticagrelor,wrong,الثيكليرابيلز
+qwen2.5:3b|cardio-mi-03|ar|grade8|run1,qwen2.5:3b,cardio-mi-03,atorvastatin,wrong,آتاروفيناتن
+qwen2.5:3b|cardio-mi-03|ar|grade8|run1,qwen2.5:3b,cardio-mi-03,metoprolol succinate,misspelled,ميتوبرولول سكستين (salt name garbled)
+qwen2.5:3b|cardio-mi-03|ar|grade8|run1,qwen2.5:3b,cardio-mi-03,lisinopril,correct,ليسينوبريل
+qwen2.5:3b|gp-diabetes-htn-04|ar|grade8|run1,qwen2.5:3b,gp-diabetes-htn-04,metformin,misspelled,ميتافورين
+qwen2.5:3b|gp-diabetes-htn-04|ar|grade8|run1,qwen2.5:3b,gp-diabetes-htn-04,amlodipine,wrong,أقلمازين
+qwen2.5:3b|gp-peds-asthma-05|ar|grade8|run1,qwen2.5:3b,gp-peds-asthma-05,fluticasone propionate,wrong,"فلوتاسيكورين, and called an injection (حقن)"
+qwen2.5:3b|gp-peds-asthma-05|ar|grade8|run1,qwen2.5:3b,gp-peds-asthma-05,albuterol,missing,"rescue inhaler mentioned only as طقم الانعاش, no drug name"

@@ -1,5 +1,6 @@
 // lib/verify.ts
-// The faithfulness guardrail. Two layers:
+// The faithfulness guardrail. Three layers:
+//   0. Deterministic output-script check (wrong script / leaked passages)
 //   1. Deterministic number/dose check (reliable, language-agnostic)
 //   2. LLM-based semantic check (catches changed facts, added info)
 // Output is "flags" — warnings for a human to review. This is a
@@ -8,8 +9,36 @@
 import { askOllama } from "@/lib/ollama";
 
 export interface Flag {
-  type: "number" | "changed" | "added" | "removed";
+  type: "script" | "number" | "changed" | "added" | "removed";
   detail: string;
+}
+
+// --- Layer 0: deterministic output-script check ---
+// Local models sometimes switch script mid-output (e.g. Arabic -> Chinese) or
+// append long English commentary to an Arabic answer. Neither is caught by the
+// number check, and the semantic check often misses them, so test the script directly.
+
+const CJK = /[\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\uac00-\ud7af]/;
+const ARABIC_SCRIPT = /[\u0600-\u06ff]/;
+// 8+ consecutive Latin-script words. Short Latin tokens (drug names, ECG, ALT/AST)
+// are normal inside Arabic medical text and are not flagged.
+const LATIN_RUN = /(?:\b[A-Za-z][A-Za-z'\-]*[\s,;:.]+){8,}/;
+
+export function checkScript(simplified: string): Flag[] {
+  const flags: Flag[] = [];
+  if (CJK.test(simplified)) {
+    flags.push({
+      type: "script",
+      detail: "The simplified text contains Chinese/Japanese/Korean characters. Part of the output may be in the wrong language.",
+    });
+  }
+  if (ARABIC_SCRIPT.test(simplified) && LATIN_RUN.test(simplified)) {
+    flags.push({
+      type: "script",
+      detail: "The Arabic output contains a long passage in Latin script. It may include untranslated or extra text.",
+    });
+  }
+  return flags;
 }
 
 // --- Layer 1: deterministic number check ---
@@ -125,7 +154,8 @@ function safeParseIssues(raw: string): Flag[] {
 
 // --- Combine both layers ---
 export async function verifyFaithfulness(original: string, simplified: string): Promise<Flag[]> {
+  const scriptFlags = checkScript(simplified);
   const numberFlags = checkNumbers(original, simplified);
   const semanticFlags = await checkSemantics(original, simplified);
-  return [...numberFlags, ...semanticFlags];
+  return [...scriptFlags, ...numberFlags, ...semanticFlags];
 }

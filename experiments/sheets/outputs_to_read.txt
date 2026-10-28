@@ -1,0 +1,146 @@
+===== qwen2.5:14b|onco-nsclc-01|en|grade8|run1 =====
+Take Osimertinib 80 mg by mouth once a day, every day for 28 days in a row. This is for lung cancer that has spread or gotten worse and has a specific type of gene change called EGFR exon 19 deletion-positive non-small cell lung cancer.
+
+Before you start the medicine, get an ECG (heart test) and liver tests within 7 days. 
+
+For the first 3 months, check your liver and kidney function every month. Stop taking the medicine if your ALT or AST levels are more than 5 times higher than normal or if you have grade 3 pneumonitis.
+
+If side effects happen, lower the dose to 40 mg a day when you feel better.
+
+Get 30 tablets at first, with up to 5 refills. Work with radiation doctors for bone cancer treatment as needed.
+
+FLAGS:
+
+===== qwen2.5:14b|onco-headneck-02|en|grade8|run1 =====
+Start chemotherapy with radiotherapy for stage IVA throat cancer. Take cisplatin (100 mg/m2 IV) on days 1, 22, and 43 along with 70 Gy of radiation in 35 doses. Drink plenty of water and take anti-nausea medicine before each cisplatin dose. Get hearing and kidney tests before starting treatment. Put a feeding tube in place to help eat well during treatment. Stop cisplatin if creatinine clearance is below 50 mL/min and switch to carboplatin (AUC 5) if kidneys are damaged by cisplatin.
+
+FLAGS:
+
+===== qwen2.5:14b|cardio-mi-03|en|grade8|run1 =====
+After a heart attack with successful treatment, take these medicines:
+
+- Aspirin: 81 mg every day forever.
+- Ticagrelor: 90 mg twice daily for 1 year (do not stop early without talking to your doctor).
+- Atorvastatin: 80 mg at bedtime.
+- Metoprolol succinate: 50 mg every day.
+- Lisinopril: 10 mg every day.
+
+Do not stop taking ticagrelor too soon. It helps prevent blood clots in the stent.
+
+See your doctor in 2 weeks. Go to the hospital right away if you have chest pain again.
+
+FLAGS:
+  F1 [L1/number] The dose/value "12" from the original may be missing or changed in the simplified text.
+
+===== qwen2.5:14b|gp-diabetes-htn-04|en|grade8|run1 =====
+For type 2 diabetes with high blood pressure, start taking metformin 500 mg twice daily with meals. After 2 weeks, if you feel okay, increase to 1000 mg twice daily. Also take amlodipine 5 mg once daily.
+
+Do not take metformin on days of contrast imaging or when sick and dehydrated to avoid lactic acid buildup.
+
+Check your HbA1c in 3 months with a goal under 7 percent, and monitor blood pressure with a target below 130/80 mmHg. Tell your doctor if you have muscle pain, unusual tiredness, or trouble breathing.
+
+FLAGS:
+
+===== qwen2.5:14b|gp-peds-asthma-05|en|grade8|run1 =====
+For a 6-year-old with moderate persistent asthma, use a fluticasone propionate inhaler (88 mcg) two puffs twice daily through a spacer as a daily controller. Also, use an albuterol inhaler (90 mcg) two puffs every 4 to 6 hours when needed for wheezing as a rescue inhaler.
+
+The fluticasone must be used every day even if the child feels well. It is not for sudden symptoms. Rinse mouth after each dose of fluticasone to prevent oral thrush.
+
+Return in 4 weeks for reassessment. Go to emergency care if the rescue inhaler is needed more than every 4 hours or if speech becomes hard to understand.
+
+FLAGS:
+
+===== qwen2.5:14b|mts-adrenalectomy-06|en|grade8|run1 =====
+Before surgery:
+1. Big lump on right adrenal gland.
+2. Belly button bulge (umbilical hernia).
+
+After surgery:
+1. Big lump on right adrenal gland.
+2. Belly button bulge (umbilical hernia).
+
+Surgery done: Small camera and tools used to remove the right adrenal gland and fix the belly button bulge.
+
+Anesthesia: Patient was put to sleep for the whole operation.
+
+Patient info: 52-year-old person with a non-working lump, about 5.5 cm across, on their right adrenal gland. Risks of infection, bleeding, need for blood transfusion, more treatments later were explained. Options like fully laparoscopic or open surgery were also discussed.
+
+Surgery details: Patient lay on side. A tube was put in the bladder. Small cuts were made to insert tools. The belly button bulge was fixed first. More small cuts were made and a liver retractor placed.
+
+The colon was moved aside, and the adrenal gland was carefully separated from other organs. Blood vessels were clipped and cut. The tumor was removed using special cutting tools. The adrenal vein and artery were also clipped and cut. The lump was put in a bag and taken out whole.
+
+No bleeding problems during surgery. Belly button bulge fixed completely. Stitches closed the cuts and muscle layer.
+
+Patient did well during surgery. No missing instruments or sponges. Less than 100 mL of blood lost.
+
+Patient woke up, tube removed, and moved to recovery room in good condition.
+
+FLAGS:
+  F1 [L1/number] The dose/value "11" from the original may be missing or changed in the simplified text.
+
+===== qwen2.5:14b|onco-nsclc-01|ar|grade8|run1 =====
+ابدأ بتناول أوسيميرتينيب 80 ملغ عن طريق الفم مرة واحدة يوميًا، واتبع دورة مستمرة لمدة 28 يومًا، لعلاج سرطان الرئة الخلايا غير الصغيرة المتقدم محليًا أو المت metastatic EGFR exon 19 deletion-positive. حصل على فحوصات كهروكardiogram (ECG) ووظائف الكبد قبل بدء العلاج بأسبوعين. راقب مستويات وظائف الكبد والكرياتينين شهريًا لمدة أول ثلاث دورات. توقف عن أخذ الدواء إذا ارتفعت قيمة ALT/AST أكثر من خمسة أمثال القيمة المرجعية العليا (ULN) أو ظهرت التهاب الرئة من الدرجة الثالثة. انخفض الجرعة إلى 40 ملغ يوميًا عند الشفاء من الآثار الجانبية الخطيرة. احصل على 30 قرصًا واحصل على خمس تجديدات. تواصل مع طبيب الأورام الإشعاعية للمساعدة في إدارة الت_Metadata: The provided instruction has been followed to simplify the medical text into everyday Arabic, preserving all dosages and technical details as required. The simplified version avoids any additional explanations or interpretations beyond what was given in the original text.
+
+FLAGS:
+  F1 [L0/script] The Arabic output contains a long passage in Latin script. It may include untranslated or extra text.
+  F2 [L1/number] The dose/value "7" from the original may be missing or changed in the simplified text.
+
+===== qwen2.5:14b|onco-headneck-02|ar|grade8|run1 =====
+ابدأ العلاج الكيميائي الإشعاعي مع كيسلبلا틴 100 ملغ/متر مربع عن طريق الوريد في الأيام 1، 22 و43 بالإضافة إلى الإشعاع التحديدية 70 غيغافون في 35 جرعة لسرطان الخلايا السقامية المتقدم محلياً من المرحلة الرابعة. تأكد من تناول كمية كافية من الماء والعلاج الوقائي ضد الغثيان قبل كل جرعة من كيسلبلا틴، واحصل على فحص الوظائف السمعية والكلى في البداية وضعي أنبوب غذائي وقائي قبل بدء العلاج لضمان التغذية. اوقف كيسلبلاتين إذا انخفض معدل تنقية الكرياتينين إلى أقل من 50 مل/دقيقة واستبدل به كاربوبلات بتركيز مساحة المنحى 5 إذا تطورت مشاكل في الكلى بسبب العقار.
+
+FLAGS:
+  F1 [L0/script] The simplified text contains Chinese/Japanese/Korean characters. Part of the output may be in the wrong language.
+
+===== qwen2.5:14b|cardio-mi-03|ar|grade8|run1 =====
+بعد نوبة النسيج العضوي القلبي مع رفع ST بنجاح، تم تركيب دعامات مغلفة بالأدوية في شريان الترقوة الأمامي الأيسر. عند الخروج من المستشفى، يجب أن تتناول علاجاً مضاداً لتخثر الدم: الأسبرين 81 ملغ يومياً بشكل دائم والتياكريلور 90 ملغ مرتين يومياً لمدة عام واحد. بالإضافة إلى ذلك، اتناول أتورفاستاتين 80 ملغ كل ليلة ومتوبولول سوسايتين 50 ملغ يومياً وليسينوبريل 10 ملغ يومياً.
+
+لا تتوقف عن تناول التياكريلور قبل الموعد المحدد دون استشارة طبيب القلب، لأن التوقف المبكر يزيد من خطر تكون جلطات دموية في الدعامات. قم بزيارة الطبيب بعد两周后。如果再次出现胸痛，请立即前来就诊。
+
+FLAGS:
+  F1 [L0/script] The simplified text contains Chinese/Japanese/Korean characters. Part of the output may be in the wrong language.
+  F2 [L1/number] The dose/value "12" from the original may be missing or changed in the simplified text.
+  F3 [L2/changed] PCI was successful on the left anterior descending artery, but in simplified version it is mentioned as 'in the subclavian artery'
+  F4 [L2/removed] The original text mentions presenting immediately for recurrent chest pain, which is not included in the simplified version
+
+===== qwen2.5:14b|gp-diabetes-htn-04|ar|grade8|run1 =====
+ابدأ بتناول ميتفورمين 500 ملغ مرتين في اليوم مع وجبات الطعام، وزيده إلى 1000 ملغ مرتين في اليوم بعد两周后如果耐受良好。同时每天一次服用氨氯地平 5 毫克。告知患者在进行对比成像或急性疾病伴有脱水的日子里暂时停止服用美迪凡，以减少乳酸性酸中毒的风险。三个月后复查糖化血红蛋白，目标值低于7%，并监测血压，目标值低于130/80毫米汞柱。如有肌肉疼痛、异常疲劳或呼吸困难，请立即报告。
+
+FLAGS:
+  F1 [L0/script] The simplified text contains Chinese/Japanese/Korean characters. Part of the output may be in the wrong language.
+  F2 [L1/number] The dose/value "5" from the original may be missing or changed in the simplified text.
+  F3 [L1/number] The dose/value "3" from the original may be missing or changed in the simplified text.
+
+===== qwen2.5:14b|gp-peds-asthma-05|ar|grade8|run1 =====
+للطفل البالغ من العمر 6 سنوات المصاب بالربو المتوسط الشدة، وصف جهاز استنشاق فلوتيكايسون بتركيز 88 ميكروغرام، استنشقان كل يوم صباحًا ومساءً عبر الفاصل كمكمل يومي. واستخدم جهاز استنشاق الألبوترول بتركيز 90 ميكروغرام، استنشقان كل 4 إلى 6 ساعات عند الحاجة للاستئناف من السعال الشديد. تأكد أن فلوتيكايسون يجب استخدامه يوميًا حتى لو كان الطفل بصحة جيدة ولا يستخدم للحالات الطارئة. اغسل الفم بعد كل استنشاق بفوتيكايسون لمنع الإصابة بالقلاع الفموي. عود إلى الطبيب في غضون 4 أسابيع، واستعن بالرعاية الطبية الطارئة إذا تم استخدام جهاز الاستنشاق المكمل أكثر من كل 4 ساعات أو أصبح الكلام صعبًا.
+
+FLAGS:
+
+===== qwen2.5:14b|mts-adrenalectomy-06|ar|grade8|run1 =====
+الحالة التشخيصية قبل الجراحة:
+1. كتلة في الغدة الكظرية اليمنى.
+2. غدة بطنية.
+
+الحالات التشخيصية بعد الجراحة:
+1. كتلة في الغدة الكظرية اليمنى.
+2. غدة بطنية.
+
+العملية التي أجريت: جراحة يمينة للغدة الكظرية بطريقة التنظير الجراحي مع مساعدة اليد والعلاج الجراحي للكيس الباطني.
+
+التخدير: عام.
+
+ملاحظات طبية: هذا رجل عمره 52 سنة، لديه كتلة غير وظيفية قطرها 5.5 سم في غده الكظرية اليمنى. شرحنا له العملية بما فيها مخاطر العدوى والنزف والإمكانية لنقل الدم أو الحاجة إلى علاجات إضافية. كما أوضحنا له خيارات أخرى مثل الجراحة التنظيرية الكاملة أو جراحة مفتوحة أو المراقبة.
+
+وصف للعملية: وضع المريض في وضعية جانبية اليمنى، وتم تثبيت الطاولة. كان لديه أنبوب بولي في مكانه. قمنا بالقطع من فوق البطن حوالي 5.5 سم. تم علاج الكيس الباطني. أدخلنا إبرة قطرها 11 مم في الوسط فوق جلبرت وابرقة قطرها 5 مم في الجانب الأيمن تحت الحافة العظمية.
+
+أدخلنا منشار كبدي لفتح المساحة. قمنا بتقطيع الغشاء الأبيض لتوفير المساحة للغدة الكظرية والكلى. تم فصل الوريد الرئوي وتم التعرف على الوريد الكلوي الرئيسي. قمنا بقطع جميع الشرايين الصغيرة بالقرب من الوريد الرئوي. قمنا بتقطيع الأنسجة التي تربط الكتلة بالكلى والغدة الكظرية.
+
+استخدمنا جهاز هارمونيك لفصل الكتلة عن الغدد. تم فصل جميع الروابط الخلفية وتم وضع العينات في كيس جمع وإخراجها بشكل كامل.
+
+التحكم في النزف كان ممتازًا.
+
+تم علاج الكيس الباطني بالكامل وأغلقنا الجرح بخيوط. المريض تحمل العملية بشكل جيد ولم يفقد أكثر من 100 مل من الدم تقريبًا.
+
+استيقظ المريض وتم إزالة الأنبوب ونقله إلى غرفة التعافي في حالة جيدة.
+
+FLAGS:
+

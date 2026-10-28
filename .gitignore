@@ -39,3 +39,15 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+!.env.example
+
+# experiments: regenerable images and local scratch
+/experiments/results/printed/
+/experiments/sheets_new/
+*.zip
+*.patch
+
+# third-party handwritten prescription images (not redistributed)
+/data/
+/doctor_prescription/
+__pycache__/

@@ -3,7 +3,7 @@
 Simplify clinical text into plain language — locally, privately, in English and Arabic — with a built-in faithfulness check.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Next.js](https://img.shields.io/badge/Next.js-15-black?logo=next.js&logoColor=white)](https://nextjs.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js&logoColor=white)](https://nextjs.org/)
 [![Runs locally](https://img.shields.io/badge/Runs-locally-success)](https://ollama.com/)
 [![Paper DOI](https://img.shields.io/badge/Paper%20DOI-10.5281%2Fzenodo.21194927-blue)](https://doi.org/10.5281/zenodo.21194927)
 [![Code DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21188314.svg)](https://doi.org/10.5281/zenodo.21188314)
@@ -48,9 +48,9 @@ Everything runs on your own machine through a local model (via Ollama). No API k
 
 - **Plain-language simplification** at Grade 6 / Grade 8 / general-adult reading levels.
 - **Bilingual output** — English (LTR) and Arabic (RTL), with a matched IBM Plex type system.
-- **Faithfulness guardrail** — a two-layer check (a deterministic dose/number check plus an LLM semantic check) that surfaces meaning-level errors for human review.
+- **Faithfulness guardrail** — layered output checks for human review: a deterministic script check (wrong-language passages in Arabic output), a dose/number check with Arabic-Indic digit and number-word normalization, and an LLM semantic check.
 - **Document upload** — read printed prescriptions from PDF (text layer) or image (OCR).
-- **OCR safety gate** — low-confidence reads (handwriting, blur) are refused, not simplified, to prevent OCR→hallucination.
+- **OCR safety gate** — reads below a mean word confidence of 60/100 (handwriting, blur) are refused, not simplified, to prevent OCR→hallucination.
 - **Fully local & private** — model inference and document reading happen on-device.
 
 ## How it works
@@ -93,7 +93,7 @@ MODEL=qwen2.5:14b
 
 ## Evaluation
 
-A small gold-standard set across five specialties (oncology, cardiology, general practice) lives in `eval/`, with documented "known facts" and "known traps."
+A small diagnostic test set lives in `eval/dataset.json`: five synthetic prescriptions (oncology, cardiology, general practice) and one public operative note, with 49 documented "known facts" and 32 "known traps."
 
 ```bash
 pip install -r eval/requirements.txt --break-system-packages
@@ -103,12 +103,14 @@ python eval/run_eval.py --lang ar  # Arabic
 
 It reports readability (Flesch-Kincaid grade before/after), fact preservation, and guardrail behaviour, and writes a table to `eval/results/`.
 
-### Findings (summary)
+The full evaluation of the paper (2 models × 6 documents × 2 languages × 3 reading levels × 3 runs = 216 runs, human error audit, OCR study) is in [`experiments/`](experiments/README.md), with all raw outputs, annotation sheets and a one-command script that regenerates every table value.
 
-- Readability drops sharply (roughly grade ~21 → ~7 across the set).
-- ~95% of numeric facts are preserved.
-- The semantic checker misses most subtle meaning-level distortions — a deliberately reported limitation. Fluency and preserved numbers can create false confidence; robust semantic faithfulness for medical simplification remains open.
-- On handwritten documents, OCR failure can combine with model hallucination to produce fluent but fabricated output. MedPlain mitigates this with the confidence gate, and treats handwriting as out of scope.
+### Findings (summary, `qwen2.5:14b`, Grade 8)
+
+- Readability drops sharply: mean English Flesch–Kincaid grade 19.5 → 7.3; 79.6% of English facts kept under strict matching (most misses are faithful paraphrases).
+- Arabic is clearly weaker: 6 of 12 drug names correct, and 35% of Arabic outputs contain Chinese or Korean text (78% with `qwen2.5:3b`).
+- In a human audit of 26 confirmed errors, the numerical and semantic checks together have precision 0.75 but recall only 0.19. Fluency and preserved numbers can create false confidence.
+- The OCR gate accepts all printed controls and refuses 91.9% of 123 handwritten prescriptions. Handwriting is treated as out of scope.
 
 ## Project structure
 
@@ -121,8 +123,11 @@ app/
 lib/
   ollama.ts              local model client
   prompts.ts             simplification prompts (per level & language)
-  verify.ts              two-layer faithfulness guardrail
-eval/                    gold-standard dataset + runner
+  verify.ts              layered faithfulness guardrail (script, numeric, semantic)
+  verify.test.ts         unit tests (npm test)
+eval/                    test set + single-run evaluation runner
+experiments/             full paper evaluation: scripts, raw results, annotations, figures
+tessdata/                bundled Tesseract language models (English, Arabic)
 ```
 
 ## Limitations
